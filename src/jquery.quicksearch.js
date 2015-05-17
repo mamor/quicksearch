@@ -33,8 +33,9 @@
 				return val.toLowerCase().split(' ');
 			},
 			testQuery: function (query, txt, _row) {
+				var data = $(_row).data('quicksearch') || '';
 				for (var i = 0; i < query.length; i += 1) {
-					if (txt.indexOf(query[i]) === -1) {
+					if (txt.indexOf(query[i]) === -1 && data.indexOf(query[i]) === -1) {
 						return false;
 					}
 				}
