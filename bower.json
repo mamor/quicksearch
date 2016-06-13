@@ -2,13 +2,13 @@
   "name": "jquery.quicksearch",
   "title": "jQuery-QuickSearch",
   "description": "A jQuery plugin for searching through tables, lists, etc quickly",
-  "version": "2.0.5",
+  "version": "2.2.1",
   "main": "dist/jquery.quicksearch.js",
   "homepage": "",
   "author": [
     {
       "name": "Deux Huit Huit",
-      "url": "http://deuxhuithuit.com/"
+      "url": "https://deuxhuithuit.com/"
     },
     {
       "name": "Rik Lomas",

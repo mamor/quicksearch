@@ -7,14 +7,14 @@ This plugin is now maintained by [@DeuxHuitHuit][288]
 
 ## Project pages
 
-* <http://deuxhuithuit.github.io/quicksearch/>
+* <https://deuxhuithuit.github.io/quicksearch/>
 * <https://www.npmjs.org/package/jquery.quicksearch/>
-* <http://plugins.jquery.com/jquery.quicksearch/>
+* <https://plugins.jquery.com/jquery.quicksearch/>
 
 ## Examples
 
-* <http://deuxhuithuit.github.io/quicksearch/r/examples/>
-* <http://deuxhuithuit.github.io/quicksearch/r/examples/super_table.html>
+* <https://deuxhuithuit.github.io/quicksearch/r/examples/>
+* <https://deuxhuithuit.github.io/quicksearch/r/examples/super_table.html>
 
 ## Usage
 
@@ -99,6 +99,8 @@ $.ajax({
 	Function to call after trigger is called
 *	**onValTooSmall**
 	Function to call when the value does not exceeds the `minValLength` option.
+*	**onNoResultFound**
+	Function to call when no results are found. The normal behavior (show the no result panel) is canceled when you specify this parameter. You get the quicksearch instance in parameter so you can manually call the no result behavior.
 *	**show**
 	Function that will add styles to matched elements
 *	**hide**
@@ -149,6 +151,7 @@ $('input#search').quicksearch('table tbody tr', {
 	}
 });
 ```
+
 ## Help make quicksearch better!
 
 If you have a bug fix, the best way to help would be to:
@@ -172,12 +175,12 @@ Now licensed under the MIT License: <http://deuxhuithuit.mit-license.org>
 jQuery quicksearch was made by [Rik Lomas][rik_site] at [Lomalogue][lomalogue_site].
 It is now maintain by [Deux Huit Huit][288]
 
-Thanks to [Seth F.][thelizardreborn] for fixes and [Krzysiek Goj][goj] for the  testQuery and prepareQuery option updates
+Thanks to [Seth F.][thelizardreborn] for fixes and [Krzysiek Goj][goj] for the testQuery and prepareQuery option updates
 
 [jquery_site]: http://www.jquery.com
 [rik_site]: http://www.riklomas.co.uk
 [lomalogue_site]: http://www.lomalogue.com
-[issues]: http://github.com/deuxhuithuit/quicksearch/issues
-[thelizardreborn]: http://github.com/thelizardreborn
-[goj]: http://github.com/goj
-[288]: http://deuxhuithuit.com/
+[issues]: https://github.com/deuxhuithuit/quicksearch/issues
+[thelizardreborn]: https://github.com/thelizardreborn
+[goj]: https://github.com/goj
+[288]: https://deuxhuithuit.com/
