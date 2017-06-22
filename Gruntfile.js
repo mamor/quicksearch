@@ -17,13 +17,14 @@ module.exports = function(grunt) {
 			banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
 			'<%= grunt.template.today("yyyy-mm-dd") %>\n' +
 			'<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
-			'* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author[0].name %> (<%= pkg.author[0].url %>);\n' +
-			'* Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> http://deuxhuithuit.mit-license.org */\n'
+			'* Copyright (c) 2013 Deux Huit Huit, Rik Lomas.\n' +
+			'* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %> (<%= pkg.author.url %>);\n' +
+			'* License <%= pkg.license %> http://deuxhuithuit.mit-license.org */'
 		},
 		concat: {
 			options: {
 				process: true,
-				banner: '<%= meta.banner %>'
+				banner: '<%= meta.banner %>\n'
 			},
 			dist: {
 				src: sources,
@@ -59,12 +60,8 @@ module.exports = function(grunt) {
 				globals: {
 					console: true,
 					jQuery: true,
-					pd: true,
-					_: true,
-					Popcorn: true,
-					DEBUG: true,
-					CSS3: true,
-					JSON: true
+					JSON: true,
+					module: true
 				}
 			}
 		},
@@ -99,7 +96,7 @@ module.exports = function(grunt) {
 					//jsLintXML: 'report.xml', // create XML JSLint-like report
 					errorsOnly: false, // show only maintainability errors
 					cyclomatic: 10, // 3
-					halstead: 20, // 8
+					halstead: 22, // 8
 					maintainability: 95 //100
 				}
 			}

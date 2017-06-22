@@ -1,12 +1,4 @@
-/*! jQuery-QuickSearch - v2.0.2 - 2013-11-15
-* Copyright (c) 2013 Deux Huit Huit (https://deuxhuithuit.com/);
-* Licensed MIT http://deuxhuithuit.mit-license.org */
-/**
- * Copyrights: Deux Huit Huit, Rik Lomas.
- * Licensed MIT: http://deuxhuithuit.mit-license.org
- */
-
-(function($, window, document, undefined) {
+(function ($, global, undefined) {
 	'use strict';
 	
 	$.quicksearch = {
@@ -15,6 +7,7 @@
 			selector: null,
 			stripeRows: null,
 			loader: null,
+			caseSensitive: false,
 			noResults: '',
 			matchedResultsCount: 0,
 			bind: 'keyup search input',
@@ -212,8 +205,8 @@
 			val = '';
 			this.loader(true);
 			options.onBefore.call(this);
-			window.clearTimeout(timeout);
-			timeout = window.setTimeout(function () {
+			global.clearTimeout(timeout);
+			timeout = global.setTimeout(function () {
 				self.go();
 			}, options.delay);
 		};
@@ -242,7 +235,10 @@
 		
 		this.strip_html = function (input) {
 			var output = input.replace(new RegExp('<[^<]+\\>', 'g'), ' ');
-			output = $.trim(output.toLowerCase());
+			if (!options.caseSensitive) {
+				output = output.toLowerCase();
+			}
+			output = $.trim(output);
 			return output;
 		};
 		
@@ -306,8 +302,8 @@
 			} else {
 				this.loader(true);
 				options.onBefore.call(this);
-				window.clearTimeout(timeout);
-				timeout = window.setTimeout(function () {
+				global.clearTimeout(timeout);
+				timeout = global.setTimeout(function () {
 					self.go();
 				}, options.delay);
 			}
@@ -329,7 +325,11 @@
 				self.reset();
 			});
 		});
-		
 	};
-
-}(window.jQuery, this, document));
+	
+	// node export
+	if (global.module && global.module.exports) {
+		module.exports = $.fn.quicksearch;
+	}
+	
+})(jQuery, this);
