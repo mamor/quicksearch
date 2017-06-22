@@ -332,4 +332,4 @@
 		module.exports = $.fn.quicksearch;
 	}
 	
-})(jQuery, this);
+})(window.jQuery, window);
